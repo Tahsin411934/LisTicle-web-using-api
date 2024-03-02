@@ -101,17 +101,22 @@ const fatchLatestData = (allNews) => {
 
 
 
-const searchData = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts?category=coding')
+const showSearchData = async (categoryName) => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`)
     const data = await res.json()
     console.log(data)
     // fatchData(data.posts);
 }
 
+const searchBtn=document.getElementById('searchBtn');
+searchBtn.addEventListener('click', ()=>{
+    const searchData=document.getElementById('searchData');
+    showSearchData(searchData.value)
+    console.log(searchData.value);
+})
 
 
 
 
-searchData();
 loadLatestData()
 loadData()
