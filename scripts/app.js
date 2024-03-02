@@ -101,14 +101,17 @@ const fatchLatestData = (allNews) => {
 
 
 
+const searchData = async () => {
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts?category=coding')
+    const data = await res.json()
+    console.log(data)
+    // fatchData(data.posts);
+}
 
 
 
 
 
-
-
-
-
+searchData();
 loadLatestData()
 loadData()
