@@ -45,18 +45,70 @@ const fatchData = (items) => {
 
 
 
-const showItemBtn=(title,view)=>{
-    const showItemBtns = document.querySelectorAll('#showItemBtn');  
-    const readItemContainer=document.getElementById('readItemContainer');
-        const titleText=document.createElement('p');
-        const viewAmmount=document.createElement('p');
-        titleText.innerHTML=title;
-        viewAmmount.innerHTML=view;
-        readItemContainer.appendChild(titleText,viewAmmount)
-        readItemContainer.appendChild(viewAmmount)
-        console.log(title);
-        console.log(view);
- }
+const showItemBtn = (title, view) => {
+    const showItemBtns = document.querySelectorAll('#showItemBtn');
+    const readItemContainer = document.getElementById('readItemContainer');
+    const titleText = document.createElement('p');
+    const viewAmmount = document.createElement('p');
+    titleText.innerHTML = title;
+    viewAmmount.innerHTML = view;
+    readItemContainer.appendChild(titleText, viewAmmount)
+    readItemContainer.appendChild(viewAmmount)
+    console.log(title);
+    console.log(view);
+}
 
- loadData()
- 
+const loadLatestData = async () => {
+    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
+    const data = await res.json()
+    console.log(data)
+    fatchLatestData(data);
+}
+
+
+
+const fatchLatestData = (allNews) => {
+    allNews.forEach(news => {
+        console.log(news.title)
+        const latestNewsContainer = document.getElementById('latestNewsContainer');
+        const div = document.createElement('div');
+        div.classList = ' bg-[#F7F8F8] card card-compact w-[90%] bg-base-100 shadow-xl';
+        div.innerHTML = `
+        <figure><img src="${news.cover_image}" alt="Shoes" />
+                </figure>
+                <div class="card-body">
+                    <div class="grid grid-cols-12">
+                        <p><i class="fa-solid fa-camera col-span-1"></i></p>
+                        <p class="col-span-11">${news.author.posted_date}</p>
+                    </div>
+
+                    <h2 class="card-title">${news.title}</h2>
+                    <p>${news.description}</p>
+                    <div class="flex">
+                        <div class="w-16 h-16  col-span-1 ">
+                            <img class="rounded-lg" src="images/joinforum.png" alt="">
+                        </div>
+                        <div>
+                            <h1>${news.author.name}</h1>
+                            <p>${news.author.designation}</p>
+                        </div>
+                    </div>
+                </div>
+`;
+        latestNewsContainer.appendChild(div)
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+loadLatestData()
+loadData()
