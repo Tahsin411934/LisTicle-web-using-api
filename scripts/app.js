@@ -7,10 +7,10 @@ const loadData = async () => {
 const fatchData = (items) => {
     console.log(items);
     items.forEach(item => {
-        console.log(item.category)
+        console.log(item.title)
         const itemContainer = document.getElementById('itemContainer');
         const div = document.createElement('div');
-        div.classList = 'card w-[100%] bg-[#F7F8F8] shadow-xl p-10 ';
+        div.classList = 'showSearchItem card w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
         div.innerHTML = `
         <div class="card-body grid grid-cols-7 gap-0">
         <div class="w-16 h-16  col-span-1 ">
@@ -33,8 +33,11 @@ const fatchData = (items) => {
                 <p><i class="fa-regular fa-clock"></i> ${item.posted_time} min</p>
             </div>
             <div class="flex justify-end mr-10">
-                <button onclick="showItemBtn('${item.title}','${item.view_count}' )" id="showItemBtn" class="btn btn-accent rounded-full py-0"><i class="fa-regular fa-envelope-open"></i></button>
-            </div>
+            <button id="showItem" onclick="showItemBtn('${item.title.replace(/'/g, 'title')}', '${item.view_count}')" class="btn btn-accent rounded-full py-0"><i class="fa-regular fa-envelope-open"></i></button>
+
+
+</div>
+
         </div>
         </div>
 `;
@@ -43,20 +46,27 @@ const fatchData = (items) => {
     });
 }
 
+// 
+function abc(){
+    const showItem=document.getElementById('showItem')
+    console.log(showItem);
+    console.log('ballll')
+}
+
 
 
 const showItemBtn = (title, view) => {
-    const showItemBtns = document.querySelectorAll('#showItemBtn');
     const readItemContainer = document.getElementById('readItemContainer');
     const titleText = document.createElement('p');
-    const viewAmmount = document.createElement('p');
+    const viewAmount = document.createElement('p');
     titleText.innerHTML = title;
-    viewAmmount.innerHTML = view;
-    readItemContainer.appendChild(titleText, viewAmmount)
-    readItemContainer.appendChild(viewAmmount)
+    viewAmount.innerHTML = view;
+    readItemContainer.appendChild(titleText);
+    readItemContainer.appendChild(viewAmount);
     console.log(title);
     console.log(view);
 }
+
 
 const loadLatestData = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
@@ -104,18 +114,85 @@ const fatchLatestData = (allNews) => {
 const showSearchData = async (categoryName) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`)
     const data = await res.json()
+    searchDataFatch(data)
     console.log(data)
     // fatchData(data.posts);
 }
 
-const searchBtn=document.getElementById('searchBtn');
-searchBtn.addEventListener('click', ()=>{
-    const searchData=document.getElementById('searchData');
+
+
+
+const searchDataFatch = (searchItems) => {
+    const searchItemContainer = document.getElementById('searchItemContainer');
+    searchItemContainer.innerText = '';
+    console.log(searchItems);
+    searchItems.posts.forEach(item => {
+        console.log(item)
+
+        const div = document.createElement('div');
+        div.classList = 'showSearchItem card w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
+        div.innerHTML = `
+       <div class="card-body grid grid-cols-7 gap-0">
+        <div class="w-16 h-16  col-span-1 ">
+             <img class="rounded-lg" src="${item.image}" alt="">
+        </div>
+         <div class="col-span-6">
+             <div class="grid grid-cols-10 text-[--p-color] text-sm font-medium">
+                 <p class="col-span-2">#${item.category}</p>
+                 <p class="col-span-8">Author : ${item.author.name}</p>
+             </div>
+             <div>
+                 <h1 class="text-xl font-bold text-[#12132D] mb-5 mt-1" >${item.title}</h1>
+                 <p class="font-normal text-[--p-color] text-sm ">${item.description}</p>
+             </div>
+             <hr class=" border-dashed my-5 bg-[--p-color] ">
+             <div class="grid grid-cols-2">
+            <div class="flex justify-center gap-5 ">
+                 <p><i class="fa-solid fa-message"></i> ${item.comment_count}</p>
+                <p><i class="fa-regular fa-eye"></i> ${item.view_count}</p>
+                 <p><i class="fa-regular fa-clock"></i> ${item.posted_time} min</p>
+             </div>
+             <div class="flex justify-end mr-10">
+             <button id="showItem" onclick="showItemBtn('${item.title.replace(/'/g, 'title')}', '${item.view_count}')" class="btn btn-accent rounded-full py-0"><i class="fa-regular fa-envelope-open"></i></button>
+            </div>
+         </div>
+        </div>
+ `;
+        searchItemContainer.appendChild(div)
+
+    });
+    loadSpinner(false)
+}
+
+
+
+const searchBtn = document.getElementById('searchBtn');
+searchBtn.addEventListener('click', () => {
+    loadSpinner(true)
+    const searchData = document.getElementById('searchData');
     showSearchData(searchData.value)
     console.log(searchData.value);
+    const itemContainer = document.querySelector('#itemContainer');
+    const searchItemContainer = document.querySelector('#searchItemContainer');
+
+    itemContainer.classList.add('hidden')
+    searchItemContainer.classList.remove('hidden')
+    console.log(itemContainer);
+
 })
 
+const loadSpinner = (isLodding) => {
+    if (isLodding) {
+        const isHidden = document.getElementById('isHidden');
+        isHidden.classList.remove('hidden')
+    }
+    else {
+        const isHidden = document.getElementById('isHidden');
+        isHidden.classList.add('hidden')
+    }
 
+
+}
 
 
 loadLatestData()
