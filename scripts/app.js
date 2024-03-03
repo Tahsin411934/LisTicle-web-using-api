@@ -10,11 +10,12 @@ const fatchData = (items) => {
         console.log(item.title)
         const itemContainer = document.getElementById('itemContainer');
         const div = document.createElement('div');
-        div.classList = 'showSearchItem card w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
+        div.classList = 'showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
         div.innerHTML = `
         <div class="card-body grid grid-cols-7 gap-0">
-        <div class="w-16 h-16  col-span-1 ">
+        <div class="w-10 lg:w-16 h-16  col-span-1 relative">
             <img class="rounded-lg" src="${item.image}" alt="">
+            <button id="showItem1" class=""></button>
         </div>
         <div class="col-span-6">
             <div class="grid grid-cols-10 text-[--p-color] text-sm font-medium">
@@ -33,39 +34,47 @@ const fatchData = (items) => {
                 <p><i class="fa-regular fa-clock"></i> ${item.posted_time} min</p>
             </div>
             <div class="flex justify-end mr-10">
-            <button id="showItem" onclick="showItemBtn('${item.title.replace(/'/g, 'title')}', '${item.view_count}')" class="btn btn-accent rounded-full py-0"><i class="fa-regular fa-envelope-open"></i></button>
+            <div>
+            <button  onclick="showItemBtn('${item.title.replace(/'/g, 'title')}', '${item.view_count}')" class="btn btn-accent rounded-full py-0"><i class="fa-regular fa-envelope-open"></i></button>
 
 
-</div>
+        </div>
 
         </div>
         </div>
 `;
         itemContainer.appendChild(div)
-
+       
+        
     });
 }
-
-// 
-function abc(){
-    const showItem=document.getElementById('showItem')
-    console.log(showItem);
-    console.log('ballll')
-}
-
-
+let count=0;
 
 const showItemBtn = (title, view) => {
+    count++
+    const countItem=document.getElementById('countItem');
+    countItem.innerHTML=count;
+    console.log(`count is ${count}`);
     const readItemContainer = document.getElementById('readItemContainer');
+    const div = document.createElement('div');
+    div.classList='bg-[#fff] grid grid-cols-3 rounded-2xl px-5 py-2'
     const titleText = document.createElement('p');
+    titleText.classList='col-span-2'
     const viewAmount = document.createElement('p');
-    titleText.innerHTML = title;
-    viewAmount.innerHTML = view;
-    readItemContainer.appendChild(titleText);
-    readItemContainer.appendChild(viewAmount);
+    viewAmount.classList='col-span-1'
+    titleText.innerHTML =title;
+    viewAmount.innerHTML = `<i class="fa-regular fa-eye px-3"></i> ${view}`
+    div.appendChild(titleText);
+    div.appendChild(viewAmount);
+    readItemContainer.appendChild(div);
     console.log(title);
     console.log(view);
 }
+
+
+
+
+
 
 
 const loadLatestData = async () => {
@@ -111,6 +120,15 @@ const fatchLatestData = (allNews) => {
 
 
 
+
+
+
+
+
+
+
+
+
 const showSearchData = async (categoryName) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`)
     const data = await res.json()
@@ -130,10 +148,10 @@ const searchDataFatch = (searchItems) => {
         console.log(item)
 
         const div = document.createElement('div');
-        div.classList = 'showSearchItem card w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
+        div.classList = 'showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
         div.innerHTML = `
        <div class="card-body grid grid-cols-7 gap-0">
-        <div class="w-16 h-16  col-span-1 ">
+        <div class="w-10 lg:w-16 h-16  col-span-1 ">
              <img class="rounded-lg" src="${item.image}" alt="">
         </div>
          <div class="col-span-6">

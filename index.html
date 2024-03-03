@@ -19,6 +19,8 @@
     <!-- font-Awesome -->
     <script src="https://kit.fontawesome.com/5963c91824.js" crossorigin="anonymous"></script>
 </head>
+
+<!-- css style -->
 <style>
     .mulish-font {
         font-family: "Mulish", sans-serif;
@@ -40,72 +42,94 @@
 </style>
 
 <body>
-    <header class="container mx-auto border border-black">
+
+    <!-- header start -->
+    <header class="container mx-auto mt-4">
+        <!-- nav start -->
         <nav>
             <div class="navbar bg-base-100">
                 <div class="flex-1">
-                    <a class="btn btn-ghost text-xl">daisyUI</a>
+                    <a class="mulish-font text-[#12132D] text-4xl font-black ">LisTicle</a>
                 </div>
                 <div class="flex-none">
                     <ul class="menu menu-horizontal px-1 lg:flex justify-center items-center gap-5 hidden">
-                   
-
-                        
                         <li class=" w-5 lg:w-10">
-                            <div class="tooltip" data-tip="hello">
-                                <button class="inter-font btn  font-normal text-lg rounded-full"><i class="fa-regular fa-font-awesome"></i></button>
-                              </div>
+                            <div class="tooltip" data-tip="Home">
+                                <button class="btn font-normal text-xl rounded-full">
+                                    <i class="fa-solid fa-house"></i>
+                                </button>
+                            </div>
                         </li>
                         <li class="w-10">
-                            <div class="tooltip" data-tip="hello">
-                                <button class="inter-font btn  font-normal text-lg rounded-full"><i class="fa-regular fa-font-awesome"></i></button>
-                              </div>
+                            <div class="tooltip" data-tip="Coding Article">
+                                <button class="btn font-normal text-lg rounded-full">
+                                    <i class="fa-solid fa-pen"></i>
+                                </button>
+                            </div>
                         </li>
                         <li class="w-10">
-                            <div class="tooltip" data-tip="hello">
-                                <button class="inter-font btn  font-normal text-lg rounded-full"><i class="fa-regular fa-font-awesome"></i></button>
-                              </div>
+                            <div class="tooltip" data-tip="User">
+                                <button class="inter-font btn  font-normal text-lg rounded-full">
+                                    <i class="fa-solid fa-user-plus"></i>
+                                </button>
+                            </div>
                         </li>
                         <li class="w-10">
-                            <div class="tooltip" data-tip="hello">
-                                <button class="inter-font btn  font-normal text-lg rounded-full"><i class="fa-regular fa-font-awesome"></i></button>
-                              </div>
+                            <div class="tooltip" data-tip="Blog">
+                                <button class="inter-font btn  font-normal text-lg rounded-full">
+                                    <i class="fa-solid fa-flag"></i>
+                                </button>
+                            </div>
                         </li>
-                       
+
                     </ul>
-                    <button class="border-none inter-font btn bg-[#797DFC] btn-primary font-normal text-lg rounded-full ml-7">Sign In</button>
+                    <button
+                        class="border-none mulish-font font-bold text-[#FFFFFF] btn bg-[#797DFC]   text-lg rounded-full ml-7 ">Sign
+                        In
+                    </button>
                 </div>
             </div>
         </nav>
+        <!-- nav end -->
     </header>
+    <!-- header end -->
 
     <main>
-        <section class="container mx-auto text-white">
+        <!-- banner section start -->
+        <section class="container mx-auto w-[90%] lg:w-[100%] text-white">
             <div>
-                <div class="bg-gradient-to-r from-[--banner-color] to-[--banner-color] rounded-[2rem] text-center lg:text-left">
+                <div
+                    class="bg-gradient-to-r from-[--banner-color] to-[--banner-color] rounded-[2rem] text-center lg:text-left">
                     <div class="hero  h-[550px] bg-contain bg-bottom rounded-[2rem] bg-no-repeat grad "
                         style="background-image: url(images/bgbanner.png);">
-                        <div class="lg:flex gap-32 justify-center items-center">
+                        <div class="lg:flex gap-32 justify-center items-center rel">
                             <div>
-                                <h1 class="mulish-font text-6xl font-black text-[#FFFFFF]" >Welcome to the <br><span class="bg-gradient-to-r from-[#797DFC] to-[--gradient-color] inline-block text-transparent bg-clip-text"> ReTro </span>
+                                <h1 class="mulish-font text-6xl font-black text-[#FFFFFF]">
+                                    <span class="">Welcome to the </span><br><span
+                                        class="bg-gradient-to-r from-[#797DFC] to-[--gradient-color] inline-block text-transparent bg-clip-text mt-5">
+                                        LisTicle </span>
                                     Forum
                                 </h1>
-                                
-                                <p class="text-xl font-medium text-[--p-color1] my-10 ">Share your favorite opinion and win and wp <br class="">
+
+                                <p class="text-xl font-medium text-[--p-color1] my-10 ">Share your favorite opinion and
+                                    win and wp <br class="">
                                     forum coffee mug
                                 </p>
-                                <div >
-                                <label class="input input-bordered flex items-center gap-2 rounded-full h-[70%] w-[90%] m-auto lg:m-0">
-                                    <input id="searchData" type="text" class="grow w-full h-full text-black lg:px-5" placeholder="Search here anything" />
-                                    <button id="searchBtn" class="inter-font btn bg-[#797DFC] font-normal text-lg rounded-full ">Sign In</button>
-                                </label>
+                                <div>
+                                    <label
+                                        class="input input-bordered flex items-center gap-2 rounded-full h-[70%] w-[90%] m-auto lg:m-0">
+                                        <input id="searchData" type="text" class="grow w-full h-full text-black lg:px-5"
+                                            placeholder="Search here anything" />
+                                        <button id="searchBtn"
+                                            class="border-none mulish-font font-bold text-[#FFFFFF] btn bg-[#797DFC]   text-lg rounded-full ml-7 PX-3 ">Search</button>
+                                    </label>
+                                </div>
                             </div>
-                            </div>
-                            <div>
+                            <div class="relative">
                                 <div class="card w-80 bg-base-100 shadow-xl text-[#12132DCC]">
                                     <div class="card-body ">
                                         <table class="p-1">
-                                            <tr class="p-20 pb-28" >
+                                            <tr class="p-20 pb-28">
                                                 <td class="text-[#12132DCC] text-2xl font-medium">Registered Users</td>
                                                 <td class="text-[#12132DCC] text-2xl font-medium">1</td>
                                             </tr>
@@ -133,27 +157,25 @@
         </section>
 
 
+        <!-- banner section end -->
 
 
 
-
-
-
-
+        <!-- Let’s Discuss section start -->
 
         <section id="couponSection" class="container mx-auto mt-12 mb-28 relative">
-            <div class="text-4xl font-bold text-center mb-20">
-                <h1>Best offers for you</h1>
-                <p class="text-lg font-normal text-center mb-10 lg:w-3/5 m-auto">
-                    "Your One-Stop Shop for Hassle-Free Ticket Purchases! Secure Your Seats, Plan Your Journeys, and
-                    Embark on Adventures with Confidence!".</p>
+            <div class="mulish-font text-5xl font-black text-center text-[#12132D] mb-20">
+                <h1>Let’s Discuss</h1>
+                <p class="mulish-font text-lg font-normal text-center mb-10 lg:w-3/5 m-auto text-[--p-color] my-8">
+                    "Yes, you can run unit tests and view the results directly within the app. The
+                    integrated testing features allow for a streamlined ".</p>
             </div>
 
             <div id="isHidden" class="text-center hidden">
                 <span class="loading loading-spinner loading-lg "></span>
             </div>
 
-            <div class="grid grid-cols-3 gap-5">
+            <div class="lg:grid grid-cols-3 gap-5">
                 <div id="itemContainer" class="col-span-2 flex flex-col gap-10 ">
 
                 </div>
@@ -162,16 +184,29 @@
                 </div>
 
 
-                <div class="card w-[100%] bg-[#F7F8F8] shadow-xl p-10 col-span-1">
+                <div class="card w-[100%] bg-[#F7F8F8] shadow-xl col-span-1">
                     <div class="card-body flex">
-                        <div id="readItemContainer" class="grid grid-cols-2">
-                            <h1>Title</h1>
-                            <div>
-                                <p>
-                                    mark as read
+                        <div class="flex justify-between items-center ">
+                            <h1 class="mulish-font text-[#12132D] font-bold text-xl">Title</h1>
+                            <div class="flex justify-center items-center gap-2">
+                                <i class="text-[#3DCE09]  fa-sharp fa-solid fa-check-double"></i>
+                                <p class="text-[--p-color] text-base mulish-font">
+                                    Mark as read(<span id="countItem">0</span>)
                                 </p>
                             </div>
                         </div>
+
+                        <div id="readItemContainer"
+                            class="mulish-font grid col-span-1 gap-5 border border-[#fff] text-[#12132D] text-base font-semibold ">
+
+
+
+
+
+
+                        </div>
+
+
 
 
                     </div>
@@ -242,11 +277,52 @@
         </section>
 
 
-        <button onclick="abc()">check</button> 
+        <section>
+           
 
-    </main> 
+            <div class="showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8] shadow-xl p-1 ">
 
-<!-- <footer>
+                <div class="card-body grid grid-cols-7 gap-0">
+                    <div class="w-10 lg:w-16 h-16  col-span-1 relative ">
+                        
+                            <img class="rounded-lg border border-black" src="images/joinforum.png" alt="">
+                        
+                        
+                        <div class="bg-[red] w-4 h-4 rounded-full absolute -top-1.5 left-14 "></div>
+                    </div>
+                    <div class="col-span-6">
+                        <div class="grid grid-cols-10 text-[--p-color] text-sm font-medium">
+                            <p class="col-span-2">#${item.category}</p>
+                            <p class="col-span-8">Author : ${item.author.name}</p>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-[#12132D] mb-5 mt-1">${item.title}</h1>
+                            <p class="font-normal text-[--p-color] text-sm ">${item.description}</p>
+                        </div>
+                        <hr class=" border-dashed my-5 bg-[--p-color] ">
+                        <div class="grid grid-cols-2">
+                            <div class="flex justify-center gap-5 ">
+                                <p><i class="fa-solid fa-message"></i> ${item.comment_count}</p>
+                                <p><i class="fa-regular fa-eye"></i> ${item.view_count}</p>
+                                <p><i class="fa-regular fa-clock"></i> ${item.posted_time} min</p>
+                            </div>
+                            <div class="flex justify-end mr-10">
+                                <button id="showItem"
+                                    onclick="showItemBtn('${item.title.replace(/'/g, 'title')}', '${item.view_count}')"
+                                    class="btn btn-accent rounded-full py-0"><i
+                                        class="fa-regular fa-envelope-open"></i></button>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+    </main>
+
+    <!-- <footer>
     <footer class="footer footer-center p-10 bg-[--p-color] text-primary-content">
         <aside>
           <svg width="50" height="50" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" class="inline-block fill-current"><path d="M22.672 15.226l-2.432.811.841 2.515c.33 1.019-.209 2.127-1.23 2.456-1.15.325-2.148-.321-2.463-1.226l-.84-2.518-5.013 1.677.84 2.517c.391 1.203-.434 2.542-1.831 2.542-.88 0-1.601-.564-1.86-1.314l-.842-2.516-2.431.809c-1.135.328-2.145-.317-2.463-1.229-.329-1.018.211-2.127 1.231-2.456l2.432-.809-1.621-4.823-2.432.808c-1.355.384-2.558-.59-2.558-1.839 0-.817.509-1.582 1.327-1.846l2.433-.809-.842-2.515c-.33-1.02.211-2.129 1.232-2.458 1.02-.329 2.13.209 2.461 1.229l.842 2.515 5.011-1.677-.839-2.517c-.403-1.238.484-2.553 1.843-2.553.819 0 1.585.509 1.85 1.326l.841 2.517 2.431-.81c1.02-.33 2.131.211 2.461 1.229.332 1.018-.21 2.126-1.23 2.456l-2.433.809 1.622 4.823 2.433-.809c1.242-.401 2.557.484 2.557 1.838 0 .819-.51 1.583-1.328 1.847m-8.992-6.428l-5.01 1.675 1.619 4.828 5.011-1.674-1.62-4.829z"></path></svg>
