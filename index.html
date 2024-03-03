@@ -96,14 +96,14 @@
 
     <main>
         <!-- banner section start -->
-        <section class="container mx-auto w-[90%] lg:w-[100%] text-white">
+        <section class="container mx-auto w-[90%] lg:w-[100%] text-white relative mt-6 lg:mt-0">
             <div>
                 <div
                     class="bg-gradient-to-r from-[--banner-color] to-[--banner-color] rounded-[2rem] text-center lg:text-left">
                     <div class="hero  h-[550px] bg-contain bg-bottom rounded-[2rem] bg-no-repeat grad "
                         style="background-image: url(images/bgbanner.png);">
-                        <div class="lg:flex gap-32 justify-center items-center rel">
-                            <div>
+                        <div class="lg:grid grid-cols-9 gap-32 justify-center items-center ">
+                            <div class="col-span-8">
                                 <h1 class="mulish-font text-6xl font-black text-[#FFFFFF]">
                                     <span class="">Welcome to the </span><br><span
                                         class="bg-gradient-to-r from-[#797DFC] to-[--gradient-color] inline-block text-transparent bg-clip-text mt-5">
@@ -117,7 +117,7 @@
                                 </p>
                                 <div>
                                     <label
-                                        class="input input-bordered flex items-center gap-2 rounded-full h-[70%] w-[90%] m-auto lg:m-0">
+                                        class="input input-bordered flex items-center gap-2 rounded-full h-[70%] w-[80%] lg:w-[50%] m-auto lg:m-0">
                                         <input id="searchData" type="text" class="grow w-full h-full text-black lg:px-5"
                                             placeholder="Search here anything" />
                                         <button id="searchBtn"
@@ -125,35 +125,43 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="relative">
-                                <div class="card w-80 bg-base-100 shadow-xl text-[#12132DCC]">
-                                    <div class="card-body ">
-                                        <table class="p-1">
-                                            <tr class="p-20 pb-28">
-                                                <td class="text-[#12132DCC] text-2xl font-medium">Registered Users</td>
-                                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
-                                            </tr>
-                                            <tr class="">
-                                                <td class="text-[#12132DCC] text-2xl font-medium">Forum</td>
-                                                <td class="text-[#12132DCC] text-2xl font-medium">5</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-[#12132DCC] text-2xl font-medium">Topics</td>
-                                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-[#12132DCC] text-2xl font-medium">Replies</td>
-                                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
-                                            </tr>
-                                        </table>
+                            <div class="col-span-1">
 
-                                    </div>
-                                </div>
                             </div>
+                           
                         </div>
+                        
                     </div>
                 </div>
             </div>
+
+            <div class="lg:absolute mx-auto bottom-36 right-52">
+                <div class="card mx-auto w-80 bg-base-100 shadow-xl text-[#12132DCC]">
+                    <div class="card-body ">
+                        <table class="p-1">
+                            <tr class="p-20 pb-28">
+                                <td class="text-[#12132DCC] text-2xl font-medium">Registered Users</td>
+                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
+                            </tr>
+                            <tr class="">
+                                <td class="text-[#12132DCC] text-2xl font-medium">Forum</td>
+                                <td class="text-[#12132DCC] text-2xl font-medium">5</td>
+                            </tr>
+                            <tr>
+                                <td class="text-[#12132DCC] text-2xl font-medium">Topics</td>
+                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
+                            </tr>
+                            <tr>
+                                <td class="text-[#12132DCC] text-2xl font-medium">Replies</td>
+                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
         </section>
 
 
