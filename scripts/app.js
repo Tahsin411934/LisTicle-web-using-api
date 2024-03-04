@@ -96,9 +96,9 @@ const fatchLatestData = (allNews) => {
 
                     <h2 class="card-title">${news.title}</h2>
                     <p>${news.description}</p>
-                    <div class="flex">
-                        <div class="w-16 h-16  col-span-1 ">
-                            <img class="rounded-lg" src="images/joinforum.png" alt="">
+                    <div class="flex  items-center">
+                        <div class="w-14 h-14  col-span-1 mr-2 ">
+                            <img class="rounded-full" src="${news.profile_image}" alt="">
                         </div>
                         <div>
                        
