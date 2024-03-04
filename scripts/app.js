@@ -84,7 +84,7 @@ const fatchLatestData = (allNews) => {
         const designation = !news.author.designation ? 'Unknown' : news.author.designation;  
         const latestNewsContainer = document.getElementById('latestNewsContainer');
         const div = document.createElement('div');
-        div.classList = ' bg-[#F7F8F8] card card-compact w-[95%] bg-base-100 shadow-xl mx-auto hover:bg-[--navBtnbg-color] ';
+        div.classList = ' bg-[#F7F8F8] card card-compact w-[95%] bg-base-100 shadow-xl mx-auto hover:bg-[--navBtnbg-color] mb-3 lg:m-0 ';
         div.innerHTML = `
         <figure><img src="${news.cover_image}" alt="Shoes" />
                 </figure>
