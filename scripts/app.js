@@ -100,6 +100,12 @@ const loadLatestData = async () => {
 const fatchLatestData = (allNews) => {
     allNews.forEach(news => {
         console.log(news.title)
+        console.log(news.author.posted_date)
+        // if () {
+        //     console.log('undefinedssss')
+        // }
+        const posted_date = !news.author.posted_date ? 'No publish date' : news.author.posted_date;  
+        const designation = !news.author.designation ? 'Unknown' : news.author.designation;  
         const latestNewsContainer = document.getElementById('latestNewsContainer');
         const div = document.createElement('div');
         div.classList = ' bg-[#F7F8F8] card card-compact w-[95%] bg-base-100 shadow-xl mx-auto';
@@ -109,7 +115,7 @@ const fatchLatestData = (allNews) => {
                 <div class="card-body">
                     <div class="grid grid-cols-12">
                         <p><i class="fa-solid fa-camera col-span-1"></i></p>
-                        <p class="col-span-11">${news.author.posted_date}</p>
+                        <p class="col-span-11">${posted_date}</p>
                     </div>
 
                     <h2 class="card-title">${news.title}</h2>
@@ -120,7 +126,7 @@ const fatchLatestData = (allNews) => {
                         </div>
                         <div>
                             <h1>${news.author.name}</h1>
-                            <p>${news.author.designation}</p>
+                            <p>${designation}</p>
                         </div>
                     </div>
                 </div>
