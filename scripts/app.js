@@ -7,7 +7,7 @@ const loadData = async () => {
 const fatchData = (items) => {
     console.log(items);
     items.forEach(item => {
-        const bgClass = item.isActive === true ? 'bg-[red]' : 'bg-[#10B981]';       
+        const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]' ;       
         console.log(item.title)
         const itemContainer = document.getElementById('itemContainer');
         const div = document.createElement('div');
@@ -163,7 +163,7 @@ const searchDataFatch = (searchItems) => {
     console.log(searchItems);
     searchItems.posts.forEach(item => {
         console.log(item)
-        const bgClass = item.isActive === true ? 'bg-[red]' : 'bg-[#10B981]';  
+        const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]' ; 
         const div = document.createElement('div');
         div.classList = 'showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
         div.innerHTML = `
@@ -198,7 +198,9 @@ const searchDataFatch = (searchItems) => {
         searchItemContainer.appendChild(div)
 
     });
+    searchItems='';
     loadSpinner(false)
+    
 }
 
 
@@ -215,6 +217,7 @@ searchBtn.addEventListener('click', () => {
     itemContainer.classList.add('hidden')
     searchItemContainer.classList.remove('hidden')
     console.log(itemContainer);
+    searchData.value=''
 
 })
 
