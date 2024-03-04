@@ -10,7 +10,7 @@ const loadData = async () => {
 const fatchData = (items) => {
     items.forEach(item => {
         //active or not check
-        const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]' ;       
+        const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]';
         const itemContainer = document.getElementById('itemContainer');
         const div = document.createElement('div');
         div.classList = 'showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8]  hover:bg-[--navBtnbg-color]  p-1 mx-auto';
@@ -42,26 +42,26 @@ const fatchData = (items) => {
          </div>
         </div>
 `;
-          itemContainer.appendChild(div)         
+        itemContainer.appendChild(div)
     });
 }
 
 
 // 'Let’s Discuss's section' post button functionality and show read item post .
 
-let count=0;
+let count = 0;
 const showItemBtn = (title, view) => {
     count++
-    const countItem=document.getElementById('countItem');
-    countItem.innerHTML=count;
+    const countItem = document.getElementById('countItem');
+    countItem.innerHTML = count;
     const readItemContainer = document.getElementById('readItemContainer');
     const div = document.createElement('div');
-    div.classList='bg-[#fff] grid grid-cols-3 rounded-2xl px-5 py-2'
+    div.classList = 'bg-[#fff] grid grid-cols-3 rounded-2xl px-5 py-2'
     const titleText = document.createElement('p');
-    titleText.classList='col-span-2'
+    titleText.classList = 'col-span-2'
     const viewAmount = document.createElement('p');
-    viewAmount.classList='col-span-1'
-    titleText.innerHTML =title;
+    viewAmount.classList = 'col-span-1'
+    titleText.innerHTML = title;
     viewAmount.innerHTML = `<i class="fa-regular fa-eye px-3"></i> ${view}`
     div.appendChild(titleText);
     div.appendChild(viewAmount);
@@ -80,8 +80,8 @@ const loadLatestData = async () => {
 // 'latest post' data show functionality
 const fatchLatestData = (allNews) => {
     allNews.forEach(news => {
-        const posted_date = !news.author.posted_date ? 'No publish date' : news.author.posted_date;  
-        const designation = !news.author.designation ? 'Unknown' : news.author.designation;  
+        const posted_date = !news.author.posted_date ? 'No publish date' : news.author.posted_date;
+        const designation = !news.author.designation ? 'Unknown' : news.author.designation;
         const latestNewsContainer = document.getElementById('latestNewsContainer');
         const div = document.createElement('div');
         div.classList = ' bg-[#F7F8F8] card card-compact w-[95%] bg-base-100 shadow-xl mx-auto hover:bg-[--navBtnbg-color] mb-3 lg:m-0 ';
@@ -123,7 +123,7 @@ searchBtn.addEventListener('click', () => {
     const searchItemContainer = document.querySelector('#searchItemContainer');
     itemContainer.classList.add('hidden')
     searchItemContainer.classList.remove('hidden')
-    searchData.value=''
+    searchData.value = ''
 
 })
 
@@ -147,16 +147,15 @@ const searchDataFatch = (searchItems) => {
     console.log(searchItems);
     searchItems.posts.forEach(item => {
         console.log(item)
-        const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]' ; 
+        const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]';
         const div = document.createElement('div');
         div.classList = 'showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8] hover:bg-[--navBtnbg-color]  p-1 ';
         div.innerHTML = `
        <div class="card-body grid grid-cols-7 gap-0">
-        <div class="w-10 lg:w-16 h-16  col-span-1 relative">
-             <img class="rounded-lg" src="${item.image}" alt="">
-             <button class="showItemButton  ${bgClass} w-4 h-4 rounded-full absolute -top-1.5 left-14 "></button>
-
-        </div>
+       <div class="w-10 lg:w-16 h-16  col-span-1 relative">
+            <img class="rounded-lg" src="${item.image}" alt="">
+            <button class="showItemButton  ${bgClass} w-4 h-4 rounded-full absolute -top-1 lg:-top-1.5 left-8 lg:left-14 "></button>
+      </div>
          <div class="col-span-6">
              <div class="grid grid-cols-10 text-[--p-color] text-sm font-medium">
                  <p class="col-span-2">#${item.category}</p>
@@ -182,9 +181,9 @@ const searchDataFatch = (searchItems) => {
         searchItemContainer.appendChild(div)
 
     });
-    searchItems='';
+    searchItems = '';
     loadSpinner(false)
-    
+
 }
 
 
