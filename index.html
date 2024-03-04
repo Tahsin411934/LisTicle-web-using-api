@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!-- tailwind and daisyui CDN  -->
+    <!-- tailwind and daisyui CDN  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- font Link -->
+    <!-- font Link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
         rel="stylesheet">
 
-<!-- font-Awesome -->
+    <!-- font-Awesome -->
     <script src="https://kit.fontawesome.com/5963c91824.js" crossorigin="anonymous"></script>
 </head>
 
@@ -43,11 +43,29 @@
 
 <body>
 
- <!-- header section start -->
+    <!-- header section start -->
     <header class="container mx-auto mt-4">
- <!-- nav section start -->
+        <!-- nav section start -->
         <nav>
             <div class="navbar bg-base-100">
+
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16">
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-16">
+
+                        <li class="text-[--li-color] font-medium"><a> <i class="fa-solid fa-house"></i></a></li>
+                        <li class="text-[--li-color] font-medium"><a><i class="fa-solid fa-pen"></i></a></li>
+                        <li class="text-[--li-color] font-medium"><a> <i class="fa-solid fa-user-plus"></i></a></li>
+                        <li class="text-[--li-color] font-medium"><a><i class="fa-solid fa-flag"></i></a></li>
+                    </ul>
+                </div>
                 <div class="flex-1">
                     <a class="mulish-font text-[#12132D] text-4xl font-black ">LisTicle</a>
                 </div>
@@ -90,14 +108,14 @@
                 </div>
             </div>
         </nav>
- <!-- nav end -->
+        <!-- nav end -->
 
 
     </header>
-<!-- header end -->
+    <!-- header end -->
 
     <main>
- <!-- banner section start -->
+        <!-- banner section start -->
         <section class="container mx-auto w-[90%] lg:w-[100%] text-white relative mt-6 lg:mt-0">
             <div>
                 <div
@@ -106,16 +124,15 @@
                         style="background-image: url(images/bgbanner.png);">
                         <div class="lg:grid grid-cols-9 gap-32 justify-center items-center ">
                             <div class="col-span-8">
-                                <h1 class="mulish-font text-6xl font-black text-[#FFFFFF]">
+                                <h1 class="mulish-font text-4xl lg:text-6xl font-black text-[#FFFFFF]">
                                     <span class="">Welcome to the </span><br><span
                                         class="bg-gradient-to-r from-[#797DFC] to-[--gradient-color] inline-block text-transparent bg-clip-text mt-5">
                                         LisTicle </span>
                                     Forum
                                 </h1>
 
-                                <p class="text-xl font-medium text-[--p-color1] my-10 ">Share your favorite opinion and
-                                    win and wp <br class="">
-                                    forum coffee mug
+                                <p class="text-base lg:text-xl font-medium text-[--p-color1] my-10 ">"Welcome to LisTicle Forum! Join discussions, share ideas,<br class=""> and connect with fellow enthusiasts today!"
+                                   
                                 </p>
                                 <div>
                                     <label
@@ -140,23 +157,26 @@
             <div class="lg:absolute mx-auto bottom-36 right-52">
                 <div class="card mx-auto w-80 bg-base-100 shadow-xl text-[#12132DCC]">
                     <div class="card-body ">
-                        <table class="p-1">
-                            <tr class="p-20 pb-28">
-                                <td class="text-[#12132DCC] text-2xl font-medium">Registered Users</td>
-                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
-                            </tr>
-                            <tr class="">
-                                <td class="text-[#12132DCC] text-2xl font-medium">Forum</td>
-                                <td class="text-[#12132DCC] text-2xl font-medium">5</td>
-                            </tr>
-                            <tr>
-                                <td class="text-[#12132DCC] text-2xl font-medium">Topics</td>
-                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
-                            </tr>
-                            <tr>
-                                <td class="text-[#12132DCC] text-2xl font-medium">Replies</td>
-                                <td class="text-[#12132DCC] text-2xl font-medium">1</td>
-                            </tr>
+                        <div class="mulish-font font-semibold p-2 ">
+                            
+                            <div class="grid grid-cols-5 mb-5 ">
+                                <p class="col-span-4 text-[#12132DCC] text-2xl ">Registered Users</p>
+                                <p class="col-span-1 text-[#12132DCC] text-2xl ">1</p>
+                            </div>
+                           
+                            <div class="grid grid-cols-5 mb-5">
+                                <p class="col-span-4 text-[#12132DCC] text-2xl ">Forum</p>
+                                <p class="col-span-1 text-[#12132DCC] text-2xl ">5</p>
+                            </div>
+                            <div class="grid grid-cols-5 mb-5">
+                                <p class="col-span-4 text-[#12132DCC] text-2xl ">Topics</p>
+                                <p class="col-span-1 text-[#12132DCC] text-2xl ">1</p>
+                            </div>
+                            <div class="grid grid-cols-5 mb-5">
+                                <p class="col-span-4 text-[#12132DCC] text-2xl ">Replies</p>
+                                <p class="col-span-1 text-[#12132DCC] text-2xl ">1</p>
+                            </div>
+                        </tbody>
                         </table>
 
                     </div>
@@ -164,21 +184,20 @@
             </div>
         </section>
 
- <!-- banner section end -->
- <!-- Let’s Discuss section start -->
+        <!-- banner section end -->
+        <!-- Let’s Discuss section start -->
 
-        <section id="couponSection" class="container mx-auto mt-12 mb-28 relative">
+        <section  class="container  mt-28 mb-28 relative">
             <div class="mulish-font text-5xl font-black text-center text-[#12132D] mb-20">
                 <h1>Let’s Discuss</h1>
                 <p class="mulish-font text-lg font-normal text-center mb-10 lg:w-3/5 m-auto text-[--p-color] my-8">
-                    "Yes, you can run unit tests and view the results directly within the app. The
-                    integrated testing features allow for a streamlined ".</p>
+                    "Let's discuss! Share your thoughts, ask questions,lear and engage in vibrant conversations with our community.".</p>
             </div>
-<!-- loding Spinner section start -->
+            <!-- loding Spinner section start -->
             <div id="isHidden" class="text-center hidden">
                 <span class="loading loading-spinner loading-lg "></span>
             </div>
-<!-- loding Spinner section end -->
+            <!-- loding Spinner section end -->
             <div class="lg:grid grid-cols-3 gap-5">
                 <div id="itemContainer" class="col-span-2 flex flex-col gap-10 ">
 
@@ -209,26 +228,26 @@
         </section>
 
 
- <!-- Let’s Discuss section end -->
+        <!-- Let’s Discuss section end -->
 
- <!-- Join Our Forum start -->
+        <!-- Join Our Forum start -->
         <section class="container mx-auto text-white text-center w-[95%] ">
             <div>
                 <div class="bg-gradient-to-r from-[--banner-color] to-[--banner-color] rounded-[2rem]">
                     <div class="hero  h-[403px] bg-contain bg-bottom rounded-[2rem]  bg-no-repeat grad ">
                         <div class="flex gap-10 justify-center items-center relative">
-                            <div>
+                            <div class="flex flex-col justify-start items-start">
                                 <h1 class="mulish-font text-6xl font-black text-[#FFFFFF]">
                                     Join Our Forum
                                 </h1>
 
-                                <p class="text-xl font-medium text-[--p-color1] my-10 ">Share your favorite opinion and
-                                    win and wp forum coffee mug! Yes, you can <br>
-                                    run unit tests and view the results directly within the app.
+                                <p class="text-xl font-medium text-[--p-color1] mt-10 ">Share your favorite opinion and
+                                    win and wp forum coffee mug! Yes, you can 
+                                  <p class="text-xl font-medium text-[--p-color1] mb-10"> run unit tests and view the results directly within the app.</p> 
                                 </p>
-                                <div>
-                                    <button id="searchBtn"
-                                        class="px-10 border-none mulish-font font-bold text-[#FFFFFF] btn bg-[#797DFC]   text-lg rounded-full ml-7 PX-3 ">Registered
+                                <div class="ml-[25%] lg:ml-0">
+                                    <button id="searchBtn "
+                                        class="px-10 border-none mulish-font font-bold text-[#FFFFFF] btn bg-[#797DFC]   text-lg rounded-full  lg:m-auto  ">Registered
                                         Now</button>
                                 </div>
                             </div>
@@ -242,34 +261,34 @@
                 </div>
             </div>
         </section>
- <!-- Join Our Forum section end -->
+        <!-- Join Our Forum section end -->
 
- <!-- Latest Posts section start -->
-        <section class="container mx-auto mt-10 mb-10">
+        <!-- Latest Posts section start -->
+        <section class="container mx-auto mt-28 mb-10">
             <div class="mulish-font text-5xl font-black text-center text-[#12132D] mb-20">
                 <h1>Latest Posts</h1>
                 <p class="mulish-font text-lg font-normal text-center mb-10 lg:w-3/5 m-auto text-[--p-color] my-8">
-                    Yes, you can run unit tests and view the results directly within the app. The
-                    integrated testing features allow for a streamlined ..</p>
+                    "Stay updated with our latest posts: fresh content, engaging discussions, and insightful articles waiting for you to explore."..</p>
             </div>
             <div id="latestNewsContainer" class="lg:grid grid-cols-3">
-          </div>
+            </div>
         </section>
- <!-- Latest Posts section start -->
+        <!-- Latest Posts section start -->
     </main>
-<!-- main end -->
+    <!-- main end -->
 
 
-<!-- footer section start -->
+
+
+    <!-- footer section start -->
     <footer>
-        <footer class="footer footer-center p-10 bg-[--footer-color] text-primary-content">
+        <footer class="footer footer-center pt-24 bg-[--footer-color] mulish-font">
             <aside>
                 <div class="flex-1">
                     <a class="mulish-font text-[#12132D] text-4xl font-black ">LisTicle</a>
                 </div>
-                <p class="mulish-font text-lg font-normal text-center mb-10 lg:w-3/5 m-auto text-[--p-color] my-8">
-                    Yes, you can run unit tests and view the results directly within the app. The
-                    integrated testing features allow for a streamlined ..</p>
+                <p class="mulish-font text-lg font-normal text-center  lg:w-3/5 m-auto text-[--p-color] ">
+                    "Join our vibrant forum community today! Engage in discussions, share ideas, and connect with like-minded individuals from around the world." ..</p>
 
             </aside>
             <nav>
@@ -284,11 +303,7 @@
                                 d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
                             </path>
                         </svg></a>
-                    <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="">
-                            <path
-                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
-                            </path>
-                        </svg></a>
+                   
                     <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="">
                             <path
                                 d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
@@ -296,10 +311,10 @@
                         </svg></a>
                 </div>
             </nav>
-            <p>Copyright © 2024 - All right reserved</p>
+            <p class="text-[--p-color] pb-6">Copyright © 2024 - All right reserved</p>
         </footer>
     </footer>
-<!-- footer section start -->
+    <!-- footer section start -->
     <script src="scripts/app.js"></script>
 </body>
 

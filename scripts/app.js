@@ -9,6 +9,7 @@ const loadData = async () => {
 // 'all post' section data show funtionality
 const fatchData = (items) => {
     items.forEach(item => {
+        //active or not check
         const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]' ;       
         const itemContainer = document.getElementById('itemContainer');
         const div = document.createElement('div');
@@ -79,7 +80,6 @@ const loadLatestData = async () => {
 // 'latest post' data show functionality
 const fatchLatestData = (allNews) => {
     allNews.forEach(news => {
-        console.log(news.author.posted_date)
         const posted_date = !news.author.posted_date ? 'No publish date' : news.author.posted_date;  
         const designation = !news.author.designation ? 'Unknown' : news.author.designation;  
         const latestNewsContainer = document.getElementById('latestNewsContainer');
@@ -88,7 +88,7 @@ const fatchLatestData = (allNews) => {
         div.innerHTML = `
         <figure><img src="${news.cover_image}" alt="Shoes" />
                 </figure>
-                <div class="card-body">
+                <div class="card-body mulish-font">
                     <div class="grid grid-cols-12">
                         <p><i class="fa-solid fa-camera col-span-1"></i></p>
                         <p class="col-span-11">${posted_date}</p>
@@ -101,16 +101,31 @@ const fatchLatestData = (allNews) => {
                             <img class="rounded-lg" src="images/joinforum.png" alt="">
                         </div>
                         <div>
-                            <h1>${news.author.name}</h1>
+                       
+                            <h1 class="mulish-font text-base text-[#12132D] font-semibold" >${news.author.name}</h1>
                             <p>${designation}</p>
                         </div>
                     </div>
                 </div>
 `;
+
         latestNewsContainer.appendChild(div)
     });
 }
 
+// 'search' data button functionality
+const searchBtn = document.getElementById('searchBtn');
+searchBtn.addEventListener('click', () => {
+    loadSpinner(true)
+    const searchData = document.getElementById('searchData');
+    showSearchData(searchData.value)
+    const itemContainer = document.querySelector('#itemContainer');
+    const searchItemContainer = document.querySelector('#searchItemContainer');
+    itemContainer.classList.add('hidden')
+    searchItemContainer.classList.remove('hidden')
+    searchData.value=''
+
+})
 
 
 // 'search' data load functionality
@@ -134,7 +149,7 @@ const searchDataFatch = (searchItems) => {
         console.log(item)
         const bgClass = item.isActive === true ? 'bg-[#10B981]' : 'bg-[red]' ; 
         const div = document.createElement('div');
-        div.classList = 'showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8] shadow-xl p-1 ';
+        div.classList = 'showSearchItem card w-[95%] lg:w-[100%] bg-[#F7F8F8] hover:bg-[--navBtnbg-color]  p-1 ';
         div.innerHTML = `
        <div class="card-body grid grid-cols-7 gap-0">
         <div class="w-10 lg:w-16 h-16  col-span-1 relative">
@@ -174,22 +189,7 @@ const searchDataFatch = (searchItems) => {
 
 
 
-// 'search' data button functionality
-const searchBtn = document.getElementById('searchBtn');
-searchBtn.addEventListener('click', () => {
-    loadSpinner(true)
-    const searchData = document.getElementById('searchData');
-    showSearchData(searchData.value)
-    console.log(searchData.value);
-    const itemContainer = document.querySelector('#itemContainer');
-    const searchItemContainer = document.querySelector('#searchItemContainer');
 
-    itemContainer.classList.add('hidden')
-    searchItemContainer.classList.remove('hidden')
-    console.log(itemContainer);
-    searchData.value=''
-
-})
 
 
 //  load spinner functionality
